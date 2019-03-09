@@ -1,0 +1,373 @@
+body{
+  /*background-size:cover;*/
+  counter-reset:fish;
+  -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+  overflow:hidden;
+}
+/*hide checkbox*/
+input{position:fixed; left:-99px; top:-99px;}
+
+h1, .score {margin:0; text-align:center; font-size:24px;}
+
+/*play area*/
+.wrapper{  
+  height:720px;
+  position:relative;
+  cursor:crosshair;
+  background-image:url("./Fishy Pics/reef.jpg");
+}
+/*count clicked fish*/
+
+.input-circle:checked{
+  counter-increment:fish;
+}
+/*print to screen clicked fish*/
+
+.score:after{
+  content: " " counter(fish) " Fish out of 10";
+}
+
+/* Change time after 'move' for fish speed */
+
+.input-circle ~ .fish2,.fish9{
+  opacity:0;
+  transition:10s;
+  -webkit-animation: move-right 10s infinite alternate;
+  animation: move-right 10s infinite alternate;
+}
+
+.input-circle ~ .fish1,.fish5{
+	opacity:0;
+	transition:10s;
+	-webkit-animation:move-left 10s infinite alternate;
+	animation:move-left 10s infinite alternate;
+}
+.input-circle ~ .fish3,.fish7{
+	opacity:0;
+	transition:20s;
+	-webkit-animation: move-octopus 20s infinite normal;
+	animation: move-octopus 20s infinite normal;
+}
+.input-circle ~ .fish4{
+	opacity:0;
+	transition:15s;
+	animation: move-crab 15s infinite alternate;
+}
+.input-circle ~ .fish6{
+	opacity:0;
+	transition:15s;
+	animation: move-mantaray 15s infinite alternate;
+}
+
+.input-circle ~ .fish8, .fish10{
+	opacity:0;
+	transition: 5s;
+	-webkit-animation:back-and-forth 15s infinite normal;
+	animation:back-and-forth 15s infinite normal;
+}
+
+/* For each new fish add a new input-circle# and the appropriate class name */
+
+.input-circle1:not(:checked) ~ .fish1, 
+.input-circle2:not(:checked) ~ .fish2,
+.input-circle3:not(:checked) ~ .fish3,
+.input-circle4:not(:checked) ~ .fish4,
+.input-circle5:not(:checked) ~ .fish5,
+.input-circle6:not(:checked) ~ .fish6,
+.input-circle7:not(:checked) ~ .fish7,
+.input-circle8:not(:checked) ~ .fish8,
+.input-circle9:not(:checked) ~ .fish9,
+.input-circle10:not(:checked) ~ .fish10
+{
+  opacity:1; 
+}
+
+.input-circle1:checked ~ .fish1 span,
+.input-circle2:checked ~ .fish2 span,
+.input-circle3:checked ~ .fish3 span,
+.input-circle4:checked ~ .fish4 span,
+.input-circle5:checked ~ .fish5 span,
+.input-circle6:checked ~ .fish6 span,
+.input-circle7:checked ~ .fish7 span,
+.input-circle8:checked ~ .fish8 span,
+.input-circle9:checked ~ .fish9 span,
+.input-circle10:checked ~ .fish10 span
+{
+  display:block;
+}
+
+/* Not sure how but this controls movement. Don't mess with it too much */
+/* This kind of determines how far the object will travel overall - Elven */
+
+.fish1{   
+  position:absolute;
+  right:40%;  
+  cursor:crosshair;
+}
+.fish2{   
+  position:absolute;
+  left:40%;  
+  cursor:crosshair;
+}
+.fish3{
+	position:absolute;
+	right:200%;
+	cursor:crosshair;
+}
+.fish4{
+	position:absolute;
+	right:50%;
+	cursor:crosshair;
+}
+.fish5{
+	position:absolute;
+	left:80%;
+	cursor:crosshair;
+}
+.fish6{
+	position:absolute;
+	right:80%;
+	cursor:crosshair;
+}
+.fish7{
+	position:absolute;
+	right:150%;
+	cursor:crosshair;
+}
+.fish8{
+	position:absolute;
+	right:150%;
+	cursor:crosshair;
+}
+.fish9{
+	position:absolute;
+	right:150%;
+	cursor:crosshair;
+}
+.fish10{
+	position:absolute;
+	right:150%;
+	cursor:crosshair;
+}
+/* Formatting for text box */
+
+.fish1>span, .fish2>span, .fish3>span, .fish4>span, .fish5>span, .fish6>span, .fish7>span, .fish8>span, .fish9>span, .fish10>span{
+  display:none;position:relative; z-index:2; left: 0%;bottom:-15%;  
+  background-color:white; border:solid 2px #000; width:250px; height:60px; padding:10px; border-radius:10%;
+}
+
+/* Dialog */
+
+.fish1>span:before{
+   content:"I am a salmon! I was actually born in freshwater! I will lay my eggs in the same spot I was born."; color:black; font-size:14px; font-weight:bold;
+}
+.fish2>span:before{
+   content:"I am a clownfish! I form a symbiotic relationship with anemone because of my immunity to its poison!"; color:black; font-size:14px; font-weight:bold;
+}
+.fish3>span:before{
+	content:"I am an octopus! Octopuses have three hearts!"; color:black;font-size:18px;font-weight:bold;
+}
+.fish4>span:before{
+	content:"I am a crab. A group of crabs is called a cast."; color:black;font-size:24px;font-weight:bold;
+}
+.fish5>span:before{
+	content:"I am a great white shark! I can be up to 20ft long and around 5000lbs!"; color:black;font-size:20px;font-weight:bold;
+}
+.fish6>span:before{
+	content:"I am a manta ray! I can live up to 50 years!"; color:black;font-size:20px;font-weight:bold;
+}
+.fish7>span:before{
+	content:"I am a shrimp! There are over 2000 species of our kind."; color:black;font-size:20px;font-weight:bold;
+}
+.fish8>span:before{
+	content:"My bright colors are used to scare off predators"; color:black;font-size:18px;font-weight:bold;
+}
+.fish9>span:before{
+	content:"I prefer rocky or coral habitats"; color:black;font-size:24px;font-weight:bold;
+}
+.fish10>span:before{
+	content:"I'm a Ghol fish native to the Indo-Pacific region"; color:black;font-size:24px;font-weight:bold;
+}
+
+/* Combined with movement pattern, use delay/transform to create randomness */
+
+.fish1 {bottom:180px;
+  animation-delay: -2s!important;
+  transform:scale(0.9);
+}
+
+.fish2 {bottom:20px;
+  animation-delay: -4s!important;
+  transform:scale(0.8);
+}
+
+.fish3 {bottom:1px;
+	animation-delay: -0.1s!important;
+	transform:scale(0.7);
+}
+.fish4 {bottom:10px;
+	animation-delay: -8s!important;
+	transform:scale(0.5);
+}
+.fish5 {bottom:200px;right:150px;
+	animation-delay: -9s!important;
+	transform:scale(0.5);
+}
+.fish6 {bottom:200px;
+	animation-delay: -12s!important;
+	transform:scale(0.6);
+}
+.fish7 {bottom:100px;
+	animation-delay: -14s!important;
+	transform:scale(0.9);
+}
+.fish8 {bottom:475px;
+	animation-delay: -1s!important;
+	transform:scale(0.5);
+}
+.fish9 {bottom:300px;
+	animation-delay: -2s!important;
+	transform:scale(0.7);
+}
+.fish10 {bottom:550px;
+	animation-delay: -3s!important;
+	transform:scale(0.9);
+}
+
+/* Movement pattern */
+/*Top and bottom are the opposite of what you'd expect*/
+
+@keyframes back-and-forth{
+	0%{right:10%;}
+	20%{right:30%;}
+	40%{right:50%;}
+	60%{right: t:70%;}
+	80%{right:90%;}
+	100%{right:110%}
+}
+
+@keyframes move-right{
+0%{left:10%;top:60%;}
+20%{left:30%;}
+40%{left:50%;}
+60%{left:70%;top:70%;}
+80%{left:90%;}
+100%{left:110%;top:40%;}
+}
+@keyframes move-left{
+	0%{right:10%;top:30%;}
+	20%{right:30%;}
+	40%{right:50%;}
+	60%{right:70%;top:40%;}
+	80%{right:90%;}
+	100%{right:110%;top:30%;}
+}
+@keyframes move-crab{
+	0%{right:0%;top:70%;}
+	10%{right:20%;top:70%;}
+	20%{right:10%;top:70%;}
+	30%{right:30%;top:70%;}
+	40%{right:20%;top:70%;}
+	50%{right:35%;top:70%;}
+	60%{right:30%;top:70%;}
+	70%{right:50%;top:70%;}
+	80%{right:40%;top:70%;}
+	90%{right:70%;top:70%;}
+	100%{right:100%;top:70%;}
+}
+@keyframes move-octopus{
+	0%{left:-10%;}
+	10%{left:10%;}
+	20%{left:20%;}
+	30%{left:40%;}
+	40%{left:50%;}
+	50%{left:70%;}
+	60%{left:80%;}
+	70%{left:100%;}
+	80%{left:110%;}
+	90%{left:130%;}
+	100%{left:150%;}
+}
+@keyframes move-mantaray{
+	0%{right:0%;top:20%;}
+	50%{right:50%;top:40%;}
+	100%{right:100%;top:20%;}
+}
+
+/* For Safari browser compatability */
+
+@-webkit-keyframes back-and-forth{
+	0%{right:10%;}
+	20%{right:30%;}
+	40%{right:50%;}
+	60%{right: t:70%;}
+	80%{right:90%;}
+	100%{right:110%}
+}
+
+@-webkit-keyframes move-right{
+	0%{left:10%;top:60%;}
+	20%{left:30%;}
+	40%{left:50%;}
+	60%{left:70%;top:70%;}
+	80%{left:90%;}
+	100%{left:110%;top:40%;}
+}
+@-webkit-keyframes move-left{
+	0%{right:10%;top:30%;}
+	20%{right:30%;}
+	40%{right:50%;}
+	60%{right:70%;top:40%;}
+	80%{right:90%;}
+	100%{right:110%;top:30%;}
+}
+@-webkit-keyframes move-octopus{
+	0%{left:-10%;}
+	10%{left:10%;}
+	20%{left:20%;}
+	30%{left:40%;}
+	40%{left:50%;}
+	50%{left:70%;}
+	60%{left:80%;}
+	70%{left:100%;}
+	80%{left:110%;}
+	90%{left:130%;}
+	100%{left:150%;}
+}
+
+/* Game Over screen - THIS IS WHERE YOU CHANGE GAME TIMER 'after gameover' */
+
+.gameover{
+  position:fixed; z-index:100000; left:0; top:0; bottom:0; right:0; background-color:rgba(0,0,0,0.8);
+  animation:gameover 45s linear forwards;
+  font-size:64px; color:white; font-weight:bold; text-align:center; 
+  text-indent:0;  
+  line-height:500px;
+}
+
+button{
+	padding: 15px 25px;
+	border-radius: 15px;
+	background-color: #0000FF;
+  	animation:gameover 45s linear forwards;
+  	font-size:64px; color:white; font-weight:bold; text-align:center;
+}
+
+a:link{
+	color: white;
+}
+
+a:visited{
+	color:white;
+}
+
+@keyframes gameover{
+0%{left:-5000px;bottom:100%;}
+97%{left:-5000px;bottom:100%;}
+100%{ left:0px;}
+}
