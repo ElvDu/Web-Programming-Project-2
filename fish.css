@@ -358,11 +358,11 @@ button{
   	font-size:64px; color:white; font-weight:bold; text-align:center;
 }
 
-a:link{
-	color: white;
+.gameover>a:link{
+	color:white;
 }
 
-a:visited{
+.gameover>a:visited{
 	color:white;
 }
 
@@ -370,4 +370,13 @@ a:visited{
 0%{left:-5000px;bottom:100%;}
 97%{left:-5000px;bottom:100%;}
 100%{ left:0px;}
+}
+#yelpWrapper{
+	border:1px solid black;
+}
+#resReviews{
+	display:inline-block;
+}
+#resPrice{
+	display:inline-block;
 }

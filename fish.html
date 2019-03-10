@@ -1,54 +1,83 @@
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="fish.css">
   <title>Aquarium!</title>
 </head>
-<div class="wrapper">
-  <div class="gameover">Thanks for Playing!<br><button><a href="fish.html">Reset</a></button></div>
+<body>
+	<div class="wrapper">
+		<div class="gameover">Thanks for Playing!<br><button><a href="fish.html">Reset</a></button></div>
+		<h1>Welcome to the Aquarium! <br> Learn about Fish! <span></span></h1>
+
+		<input class="input-circle input-circle1" type="radio" id="circle1" >
+		<label for="circle1" class="fish1">
+		<img src="./Fishy Pics/salmon.png" style="width:175px;height:auto"><span></span></label>
+
+		<input class="input-circle input-circle2" type="radio" id="circle2" >
+		<label for="circle2" class="fish2">
+		<img src="./Fishy Pics/clownfish.png" style="width:100px;height:auto;"><span></span></label>
+
+		<input class="input-circle input-circle3" type="radio" id="circle3" >
+		<label for="circle3" class="fish3">
+		<img src="./Fishy Pics/octopus.png" style="width:275px;height:auto;"><span></span></label>
+	
+		<input class="input-circle input-circle4" type="radio" id="circle4" >
+		<label for="circle4" class="fish4">
+		<img src="./Fishy Pics/crab.png" style="width:150px;height:auto;"><span></span></label>
+
+		<input class="input-circle input-circle5" type="radio" id="circle5" >
+		<label for="circle5" class="fish5">
+		<img src="./Fishy Pics/greatwhite.png" style="width:800px;height:auto;"><span></span></label>
+	
+		<input class="input-circle input-circle6" type="radio" id="circle6" >
+		<label for="circle6" class="fish6">
+		<img src="./Fishy Pics/manta ray.png" style="width:500px;height:auto;"><span></span></label>
+	
+		<input class="input-circle input-circle7" type="radio" id="circle7" >
+		<label for="circle7" class="fish7">
+		<img src="./Fishy Pics/shrimp.png" style="width:50px;height:auto;"><span></span></label>
+
+		<input class="input-circle input-circle8" type="radio" id="circle8" >
+		<label for="circle8" class="fish8">
+		<img src="./Fishy Pics/fish8.png" style="width:120px;height:auto;"><span></span></label>
+
+		<input class="input-circle input-circle9" type="radio" id="circle9" >
+		<label for="circle9" class="fish9">
+		<img src="./Fishy Pics/fish9.png" style="width:100px;height:auto;"><span></span></label>
+
+		<input class="input-circle input-circle10" type="radio" id="circle10" >
+		<label for="circle10" class="fish10">
+		<img src="./Fishy Pics/fish10.png" style="width:150px;height:auto;"><span></span></label>
+	
+		<!--<div class="score">You've learned about:</div>-->
   
-  <h1>Welcome to the Aquarium! <br> Learn about Fish! <span></span></h1>
-
-  <input class="input-circle input-circle1" type="radio" id="circle1" >
-  <label for="circle1" class="fish1">
-  <img src="./Fishy Pics/salmon.png" style="width:175px;height:auto"><span></span></label>
-
-  <input class="input-circle input-circle2" type="radio" id="circle2" >
-  <label for="circle2" class="fish2">
-  <img src="./Fishy Pics/clownfish.png" style="width:100px;height:auto;"><span></span></label>
-
-	<input class="input-circle input-circle3" type="radio" id="circle3" >
-	<label for="circle3" class="fish3">
-	<img src="./Fishy Pics/octopus.png" style="width:275px;height:auto;"><span></span></label>
-	
-	<input class="input-circle input-circle4" type="radio" id="circle4" >
-	<label for="circle4" class="fish4">
-	<img src="./Fishy Pics/crab.png" style="width:150px;height:auto;"><span></span></label>
-
-	<input class="input-circle input-circle5" type="radio" id="circle5" >
-	<label for="circle5" class="fish5">
-	<img src="./Fishy Pics/greatwhite.png" style="width:800px;height:auto;"><span></span></label>
-	
-	<input class="input-circle input-circle6" type="radio" id="circle6" >
-	<label for="circle6" class="fish6">
-	<img src="./Fishy Pics/manta ray.png" style="width:500px;height:auto;"><span></span></label>
-	
-	<input class="input-circle input-circle7" type="radio" id="circle7" >
-	<label for="circle7" class="fish7">
-	<img src="./Fishy Pics/shrimp.png" style="width:50px;height:auto;"><span></span></label>
-
-	<input class="input-circle input-circle8" type="radio" id="circle8" >
-	<label for="circle8" class="fish8">
-	<img src="./Fishy Pics/fish8.png" style="width:120px;height:auto;"><span></span></label>
-
-	<input class="input-circle input-circle9" type="radio" id="circle9" >
-	<label for="circle9" class="fish9">
-	<img src="./Fishy Pics/fish9.png" style="width:100px;height:auto;"><span></span></label>
-
-	<input class="input-circle input-circle10" type="radio" id="circle10" >
-	<label for="circle10" class="fish10">
-	<img src="./Fishy Pics/fish10.png" style="width:150px;height:auto;"><span></span></label>
-	
-  <div class="score">You've learned about:</div>
-  
-</div>
-
+	</div>
+</body>
+	<div id="yelpWrapper"> <!--This is the wrapper for the Yelp! pop-up once you click on a fish.-->
+		<div id="resImage">
+			<image></image> <!--Add an image from the API-->
+		</div>
+		<div id="resDetails">
+			<div id="resName"> <!--This contains the name of the restaurant-->
+				McDonald's Sushi
+			</div>
+			<div id="starRating"> <!--Place the star rating of the restaurant here. Either through text (☆★) or a visual representation-->
+				★★★★☆ <!--Hopefully everything supports these star symbols-->
+			</div>
+			<div id="resReviewAndPrice">
+				<div id="resPrice"> <!--Put price (the dollar signs) here. For sushi, they're all going to be at least $$-->
+					$$$
+				</div>
+				<div id="resReviews"> <!--Place review numbers here-->
+					420 Reviews
+				</div>
+			</div>
+		</div>
+		<div id="resDesc"> <!--This is supposed to be like the first few sentences of a highly rated review. I'm not sure if we can grab this from the API easily."-->
+			"The sushi was pretty raw tbh"
+		</div>
+		<div id="resLink"> <!--This is a link that opens up the restaurant's Yelp page in another tab.-->
+			<a href="https://yelp.com">Find on Yelp</a>
+		</div>
+	</div>
+</html>
 
