@@ -9,6 +9,21 @@ body{
 user-select: none;
   overflow:hidden;
 }
+#yelpWrapper{
+	/*display:none;*/
+	border:1px solid black;
+	position:relative;
+}
+#yelpWrapper>span{
+	position:relative;
+	display:none;
+}
+#resReviews{
+	display:inline-block;
+}
+#resPrice{
+	display:inline-block;
+}
 /*hide checkbox*/
 input{position:fixed; left:-99px; top:-99px;}
 
@@ -87,7 +102,21 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
   opacity:1; 
 }
 
-.input-circle1:checked ~ .fish1 span,
+.input-circle1:checked ~ #yelpWrapper>span,
+.input-circle2:checked ~ #yelpWrapper>span,
+.input-circle3:checked ~ #yelpWrapper>span,
+.input-circle4:checked ~ #yelpWrapper>span,
+.input-circle5:checked ~ .fish5 span,
+.input-circle6:checked ~ #yelpWrapper>span,
+.input-circle7:checked ~ #yelpWrapper>span,
+.input-circle8:checked ~ #yelpWrapper>span,
+.input-circle9:checked ~ #yelpWrapper>span,
+.input-circle10:checked ~ #yelpWrapper>span
+{
+  display:block;
+}
+/*This is from Project1*/
+/*.input-circle1:checked ~ .fish1 span,
 .input-circle2:checked ~ .fish2 span,
 .input-circle3:checked ~ .fish3 span,
 .input-circle4:checked ~ .fish4 span,
@@ -100,6 +129,7 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 {
   display:block;
 }
+*/
 
 /* Not sure how but this controls movement. Don't mess with it too much */
 /* This kind of determines how far the object will travel overall - Elven */
@@ -158,11 +188,11 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 
 .fish1>span, .fish2>span, .fish3>span, .fish4>span, .fish5>span, .fish6>span, .fish7>span, .fish8>span, .fish9>span, .fish10>span{
   display:none;position:relative; z-index:2; left: 0%;bottom:-15%;  
-  background-color:white; border:solid 2px #000; width:250px; height:60px; padding:10px; border-radius:10%;
+  background-color:white; border:solid 2px #000; width:250px; height:100px; padding:10px; border-radius:10%;
 }
 
 /* Dialog */
-
+/*
 .fish1>span:before{
    content:"I am a salmon! I was actually born in freshwater! I will lay my eggs in the same spot I was born."; color:black; font-size:14px; font-weight:bold;
 }
@@ -192,7 +222,7 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 }
 .fish10>span:before{
 	content:"I'm a Ghol fish native to the Indo-Pacific region"; color:black;font-size:24px;font-weight:bold;
-}
+}*/
 
 /* Combined with movement pattern, use delay/transform to create randomness */
 
@@ -216,7 +246,7 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 }
 .fish5 {bottom:200px;right:150px;
 	animation-delay: -9s!important;
-	transform:scale(0.5);
+	/*transform:scale(0.5);*/ /*this is so the box doesn't change size after you click*/
 }
 .fish6 {bottom:200px;
 	animation-delay: -12s!important;
@@ -370,13 +400,4 @@ button{
 0%{left:-5000px;bottom:100%;}
 97%{left:-5000px;bottom:100%;}
 100%{ left:0px;}
-}
-#yelpWrapper{
-	border:1px solid black;
-}
-#resReviews{
-	display:inline-block;
-}
-#resPrice{
-	display:inline-block;
 }

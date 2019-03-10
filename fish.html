@@ -26,7 +26,35 @@
 
 		<input class="input-circle input-circle5" type="radio" id="circle5" >
 		<label for="circle5" class="fish5">
-		<img src="./Fishy Pics/greatwhite.png" style="width:800px;height:auto;"><span></span></label>
+		<img src="./Fishy Pics/greatwhite.png" style="width:800px;height:auto;">
+			<span>
+				<div id="resImage">
+					<image></image> <!--Add an image from the API-->
+				</div>
+				<div id="resDetails">
+					<div id="resName"> <!--This contains the name of the restaurant-->
+						McDonald's Sushi
+					</div>
+					<div id="starRating"> <!--Place the star rating of the restaurant here. Either through text (☆★) or a visual representation-->
+						★★★★☆ <!--Hopefully everything supports these star symbols-->
+					</div>
+					<div id="resReviewAndPrice">
+						<div id="resPrice"> <!--Put price (the dollar signs) here. For sushi, they're all going to be at least $$-->
+							$$$
+						</div>
+						<div id="resReviews"> <!--Place review numbers here-->
+							420 Reviews
+						</div>
+					</div>
+				</div>
+				<div id="resDesc"> <!--This is supposed to be like the first few sentences of a highly rated review. I'm not sure if we can grab this from the API easily."-->
+					"The sushi was pretty raw tbh"
+				</div>
+				<div id="resLink"> <!--This is a link that opens up the restaurant's Yelp page in another tab.-->
+					<a href="https://yelp.com">Find on Yelp</a>
+				</div>
+			</span>
+		</label>
 	
 		<input class="input-circle input-circle6" type="radio" id="circle6" >
 		<label for="circle6" class="fish6">
@@ -53,31 +81,33 @@
 	</div>
 </body>
 	<div id="yelpWrapper"> <!--This is the wrapper for the Yelp! pop-up once you click on a fish.-->
-		<div id="resImage">
-			<image></image> <!--Add an image from the API-->
-		</div>
-		<div id="resDetails">
-			<div id="resName"> <!--This contains the name of the restaurant-->
-				McDonald's Sushi
+		<span>
+			<div id="resImage">
+				<image></image> <!--Add an image from the API-->
 			</div>
-			<div id="starRating"> <!--Place the star rating of the restaurant here. Either through text (☆★) or a visual representation-->
-				★★★★☆ <!--Hopefully everything supports these star symbols-->
-			</div>
-			<div id="resReviewAndPrice">
-				<div id="resPrice"> <!--Put price (the dollar signs) here. For sushi, they're all going to be at least $$-->
-					$$$
+			<div id="resDetails">
+				<div id="resName"> <!--This contains the name of the restaurant-->
+					McDonald's Sushi
 				</div>
-				<div id="resReviews"> <!--Place review numbers here-->
-					420 Reviews
+				<div id="starRating"> <!--Place the star rating of the restaurant here. Either through text (☆★) or a visual representation-->
+					★★★★☆ <!--Hopefully everything supports these star symbols-->
+				</div>
+				<div id="resReviewAndPrice">
+					<div id="resPrice"> <!--Put price (the dollar signs) here. For sushi, they're all going to be at least $$-->
+						$$$
+					</div>
+					<div id="resReviews"> <!--Place review numbers here-->
+						420 Reviews
+					</div>
 				</div>
 			</div>
-		</div>
-		<div id="resDesc"> <!--This is supposed to be like the first few sentences of a highly rated review. I'm not sure if we can grab this from the API easily."-->
-			"The sushi was pretty raw tbh"
-		</div>
-		<div id="resLink"> <!--This is a link that opens up the restaurant's Yelp page in another tab.-->
-			<a href="https://yelp.com">Find on Yelp</a>
-		</div>
+			<div id="resDesc"> <!--This is supposed to be like the first few sentences of a highly rated review. I'm not sure if we can grab this from the API easily."-->
+				"The sushi was pretty raw tbh"
+			</div>
+			<div id="resLink"> <!--This is a link that opens up the restaurant's Yelp page in another tab.-->
+				<a href="https://yelp.com">Find on Yelp</a>
+			</div>
+		</span>
 	</div>
 </html>
 
