@@ -369,35 +369,3 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 	90%{left:130%;}
 	100%{left:150%;}
 }
-
-/* Game Over screen - THIS IS WHERE YOU CHANGE GAME TIMER 'after gameover' */
-
-.gameover{
-  position:fixed; z-index:100000; left:0; top:0; bottom:0; right:0; background-color:rgba(0,0,0,0.8);
-  animation:gameover 45s linear forwards;
-  font-size:64px; color:white; font-weight:bold; text-align:center; 
-  text-indent:0;  
-  line-height:500px;
-}
-
-button{
-	padding: 15px 25px;
-	border-radius: 15px;
-	background-color: #0000FF;
-  	animation:gameover 45s linear forwards;
-  	font-size:64px; color:white; font-weight:bold; text-align:center;
-}
-
-.gameover>a:link{
-	color:white;
-}
-
-.gameover>a:visited{
-	color:white;
-}
-
-@keyframes gameover{
-0%{left:-5000px;bottom:100%;}
-97%{left:-5000px;bottom:100%;}
-100%{ left:0px;}
-}
