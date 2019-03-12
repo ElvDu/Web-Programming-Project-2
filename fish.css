@@ -9,8 +9,7 @@ body{
 	-khtml-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	overflow-x:hidden;
-	overflow-y:scroll;
+	overflow:hidden;
 }
 
 h1 {
@@ -35,7 +34,6 @@ h1 {
     text-align: center;
     min-height: 200px;
   	position: relative;
-	display:block;
 }
 
 #searchfunct {
