@@ -38,6 +38,7 @@ h1 {
 }
 
 #searchfunct {
+	top:100px;
 	position: relative;
 	text-align:center;
 	display: block;
@@ -124,7 +125,7 @@ input[type="radio"]{
 
 .wrapper{  
   height: auto;       /* These two lines were the key. */
-  min-height: 100%;
+  min-height: 720px;
   position:relative;
   background-image:url("./Fishy Pics/reef.jpg");
   background-size: cover;
