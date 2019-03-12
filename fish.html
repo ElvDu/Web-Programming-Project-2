@@ -10,11 +10,18 @@
 <body>
 	<div class="wrapper">
 
-		
-		<h1>Welcome to the Aquarium! <br> Lets find some sushi<span></span></h1>
-		<div id="searchfunct">
-			<input height="100" width="400" type="text" id="locate" placeholder="Enter a city or ZIP">
-			<button onclick="getName()">search</button>
+		<div class="titleElements">
+			<h1 id='title'>Welcome to the Aquarium!</h1>
+
+			<h2 id='title2'>Let's find some sushi</h2>
+			<div id="searchfunct">
+				<input type="text" id="locate" placeholder="Enter a city or ZIP">
+				<br>
+				<br>
+				<button id="butt" onclick="getName();myMove();">search and go!</button>
+			</div>
+
+			<input type='button' value="Restart?" id='secondaryButton' onclick="window.location.reload()">
 		</div>
 
 		<div id="fishes" class="hidefish">

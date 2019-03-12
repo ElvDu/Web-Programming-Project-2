@@ -1,9 +1,36 @@
+$(document).ready(function(){
+	$('#butt').click(function() {
+		myMove();
+		$('#butt').hide();
+		$('#locate').hide();
+	});
+
+	$('div#fishes').on("click", "label", function() {
+		$(this).fadeOut(1200);
+	});
+});
+
+//Count for restart button - will show when count == 5.
+var count = 0;
 var restaurants = new Array();
+
+function myMove() {
+	var moveTitle = document.getElementById('title2');
+	var move = setInterval(frame, 4);
+	var pos = 150;
+	function frame() {
+		if (pos == -50) {
+			clearInterval(move);
+		} else {
+			pos--;
+			moveTitle.style.top = pos + "px";
+		}
+	}
+}
 
 function getName() {
 	
 	var location = document.getElementById("locate").value;
-
 	var link = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=sushi&location=' + location;
 
 	//this will call the api with the URL above and get the data from API. default it gets 20 restaurants and it will store them in restaurants array.
@@ -17,35 +44,34 @@ function getName() {
 	    dataType: 'json',
 	    success: function(data){
 
-                var result = data.total;
+	        var result = data.total;
 
-                try{
-                    $.each(data.businesses, function(i, item) {
+	            $.each(data.businesses, function(i, item) {
 
-                    	var name = item.name;
-                        var cost = item.price;
-                        var phone = item.display_phone;
-                        var image = item.image_url;
-                        var rating = item.rating;
-                        var count = item.review_count;
-                        var address = item.location.address1;
-                        var city = item.location.city;
-                        var state = item.location.state;
-                        var zipcode = item.location.zip_code;
-                        var wholeaddress = address + ' ' + city + ', ' + state + ' ' + zipcode;
-                        var website = item.url;
+	            	var name = item.name;
+	                var cost = item.price;
+	                var phone = item.display_phone;
+	                var image = item.image_url;
+	                var rating = item.rating;
+	                var count = item.review_count;
+	                var address = item.location.address1;
+	                var city = item.location.city;
+	                var state = item.location.state;
+	                var zipcode = item.location.zip_code;
+	                var wholeaddress = address + ' ' + city + ', ' + state + ' ' + zipcode;
+	                var website = item.url;
 
-                        restaurants.push([image, name, cost, rating, count, phone, wholeaddress, website]);		//stores the info in 2D array
-                        document.getElementById('fishes').classList.remove('hidefish');		//once we have pull all info from API fish will appear
-                  });
-                } 
-                catch(err)
-                {
-                	alert("Invalid city or address");
-                }
+	                restaurants.push([image, name, cost, rating, count, phone, wholeaddress, website]);		//stores the info in 2D array
+	                document.getElementById('fishes').classList.remove('hidefish');		//once we have pull all info from API fish will appear
+	          });
+                 
      
-            }
+        }
 	    
+	}).fail(function() {
+		//On fail, will alert then reload page.
+		alert("Invalid city or address. Please try again.");
+		window.location.reload();
 	});
 }
 
@@ -70,6 +96,10 @@ function getInfo(num,picname)
 	var x = num;
 	document.getElementById('yelpWrapper').appendChild(createPopup(x));
 	picname.setAttribute('class','killfish');		//start the kill fish animation
+	count++;
+	if (count == 5) {
+		showNewSearch();
+	}
 }
 
 function showpopup(n)
@@ -77,5 +107,8 @@ function showpopup(n)
 	n.classList.toggle('show');		//onclick function that will dislpay the popup
 }
 
+function showNewSearch() {
+	$('#secondaryButton').css('visibility', 'visible');
+}
     
 
