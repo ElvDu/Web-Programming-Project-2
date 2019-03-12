@@ -63,7 +63,7 @@ input[type="radio"]{
 }
 
 #searchfunct{
-	position: absolute;
+	text-align:center;
 	display: block;
   	left:40%;
 }
